@@ -63,12 +63,24 @@
     border-radius: 20px;
     cursor: pointer;
 }
-.tablinks:hover{
-    border: solid 4px white;
+.opt-voting:hover > .menu-btn-voting {
+    background-color: var(--add-color) ;
+    color: var(--main-color) ;
 }
-.tablinks:focus{
-    border: solid 4px #FBE0DC;
+
+.opt-voting:hover > .menu-opt-voting {
+    border: solid 4px white ;
 }
+
+/* .opt-voting:focus > .menu-btn-voting {
+    background-color: #FF868E ;
+    color: white ;
+}
+
+.opt-voting:focus > .menu-opt-voting {
+    border: solid 4px #FBE0DC ;
+} */
+
 .menu-opt-breeds{
     background: url(../img/pet-breeds.svg),var(--green-color);
     background-size: 80%;
@@ -80,6 +92,16 @@
     border-radius: 20px;
    padding: 10px;
 }
+
+.opt-voting:hover > .menu-btn-breeds {
+    background-color: var(--add-color) ;
+    color: var(--main-color) ;
+}
+
+.opt-voting:hover > .menu-opt-breeds {
+    border: solid 4px white ;
+}
+
 .menu-opt-gallery{
     padding: 10px;
     background: url(../img/images-search.svg),#FFD280;
@@ -89,9 +111,16 @@
     width: 8.1em;
     background-repeat: no-repeat;
     border: solid 4px #FFEDCC    ;
-    border-radius: 20px;
+    border-radius: 20px;    
+}
+.opt-voting:hover > .menu-btn-gallery {
+    background-color: var(--add-color) ;
+    color: var(--main-color) ;
+}
 
-    
+.opt-voting:hover > .menu-opt-gallery {
+    border: solid 4px white ;
+   
 }
 .menu-btn{
     color: var(--main-color);
@@ -110,15 +139,5 @@
     letter-spacing: 2px;
     text-align: center;
     margin-top: 10px;
-
-
-}.menu-btn:hover{
-    color: var(--main-color);
-    background-color: var(--add-color);
 }
-.menu-btn:focus{
-    color: white;
-    background-color: var(--main-color);
-}
-
 
