@@ -1,0 +1,123 @@
+  .navigation{
+    margin-right: 30px;
+  }
+  .topnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+  }
+  
+  .topnav input[type=text] {
+    padding: 6px;
+    border: 2px solid transparent;
+    font-family: Jost;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    font-size: 20px;
+    background-color: white;
+    padding: 13px 20px 13px;
+    border-radius: 20px;    
+    outline: none;
+    width: 27.65em;
+    margin-right: 10px ;
+
+  }
+  input.search-input[type=text]:hover {
+    border: 2px solid var(--add-color);
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+
+  }
+  input.search-input[type=text]:focus{
+    border: 2px solid var(--main-color);
+    text-indent: 0%;
+    color: #1D1D1D;
+    
+  }
+  .buttonIn{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .search-btn{
+    position: absolute;
+    top: 0;
+    background-color: #FBE0DC;
+    padding: 10px;
+    font-size: 17px;
+    border-radius: 10px;
+    right: 0px;
+    z-index: 5;
+    border: none;
+    top: 2px;
+    cursor: pointer;
+    float: left;
+    width: 2.3em;
+    margin-top: 10px;
+    margin-right: 20px;
+  } 
+  .emotion-btn{
+    display:flex;
+    flex-direction: row;
+    column-gap: 10px;
+  }
+  .emotion{
+    height: 4.5em;
+    width: 4.5em;
+    padding: 15px;
+    cursor: pointer;
+  }
+  .smile{
+    background: url(../img/icons/smile.svg), white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+  }
+  .heart{background: url(../img/icons/heart.svg), white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;}
+
+  .sad{background: url(../img/icons/sad.svg), white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+  }
+
+  .smile:focus{
+    background: url(../img/icons/smile-w.svg), white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+  }
+  .heart:focus{background: url(../img/icons/heart-w.svg), white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+  }
+    
+  .sad:focus{background: url(../img/icons/sad-w.svg), white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+  }
+
+  .emotion:hover{
+    background-color: var(--add-color);
+    color: #1D1D1D;
+  }
+  .emotion:focus{
+    background-color: var(--main-color);
+    color: white;
+  }
+  
+  iframe .emotion-img:hover{
+    color:white;
+  }
+  .tabcontent{
+    display: none;
+  }

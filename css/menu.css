@@ -1,0 +1,124 @@
+
+#logo{
+    height: 24px;
+    width: 106.1614990234375px;
+    left: 147px;
+    top: 30px;
+    border-radius: 0px;
+
+}
+.menu{
+    margin-left: 9.2em;
+}
+.menu-h1{
+    margin-top:1.8em;
+    font-size: 44px;
+    line-height: 58px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.menu-text{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #8C8C8C;
+
+}
+.menu-h2{
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.menu-options{
+    display:flex;
+    flex-direction: row;
+    gap:1rem;
+    
+}
+.menu-opt{
+    justify-items: center;
+    height: 12.2em;
+    width: 8.3em;
+    border-radius: 20px;
+}
+.menu-opt-img{
+    background-color: transparent;
+}
+.menu-opt-voting{
+    padding: 10px;
+    background: url(../img/icons/vote-table.svg), var(--blue-color);
+    background-size: 70%;
+    background-position: center;
+    height: 12em;
+    width: 8.1em;
+    background-repeat: no-repeat;
+    border: solid 4px #E1E2FF;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.tablinks:hover{
+    border: solid 4px white;
+}
+.tablinks:focus{
+    border: solid 4px #FBE0DC;
+}
+.menu-opt-breeds{
+    background: url(../img/pet-breeds.svg),var(--green-color);
+    background-size: 80%;
+    background-position: center;
+    height: 12em;
+    width: 8.1em;
+    background-repeat: no-repeat;
+    border: solid 4px #D5F7E3    ;
+    border-radius: 20px;
+   padding: 10px;
+}
+.menu-opt-gallery{
+    padding: 10px;
+    background: url(../img/images-search.svg),#FFD280;
+    background-size: 80%;
+    background-position: center;
+    height: 12em;
+    width: 8.1em;
+    background-repeat: no-repeat;
+    border: solid 4px #FFEDCC    ;
+    border-radius: 20px;
+
+    
+}
+.menu-btn{
+    color: var(--main-color);
+    background-color: white;
+    text-transform: uppercase;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 10px ;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    font-family: Jost;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 10px;
+
+
+}.menu-btn:hover{
+    color: var(--main-color);
+    background-color: var(--add-color);
+}
+.menu-btn:focus{
+    color: white;
+    background-color: var(--main-color);
+}
+
+

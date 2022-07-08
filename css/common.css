@@ -1,0 +1,44 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F8F8F7;;
+}
+
+:root {
+    font-family: 'Heebo', 'PT Sans', sans-serif;
+    --main-color: #FF868E;
+    --bg-color: #F8F8F7;
+   --add-color: #FBE0DC;
+   --green-color:  #97EAB9;
+   --yellow-color: #FFD280;
+   --blue-color: #B4B7FF
+;
+}
+
+img {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0px auto;
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+   justify-content:normal;
+}
+
+button{
+    border-radius: 10px;
+    background-color: white;
+    color: #FF868E;
+    border: none;
+    padding: 10px;
+}

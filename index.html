@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>PetsPaw</title>
+  </head>
+  <body>
+    <header></header>
+    <main class="container">
+      <div class="menu">
+        <div class="header-container">
+          <a href="" class="brand">
+            <img class="header_logo" id="logo" src="img/logo.svg" alt="logo"
+          /></a>
+        </div>
+        <h1 class="menu-h1">Hi intern!</h1>
+        <p class="menu-text">Welcome to MI 2022 Front-end test</p>
+        <h2 class="menu-h2">Lets start using The Cat API</h2>
+        <div class="menu-options">
+          <div class="menu-opt" onclick="openTab(event, 'voting')">
+            <button class="menu-opt-voting tablinks" >
+            </button>
+            <button class="menu-btn" >Voting</button>
+          </div>
+          <div class="menu-opt" onclick="openTab(event, 'breeds')">
+            <button class="menu-opt-breeds tablinks"></button>
+            <button class="menu-btn" >Breeds</button>
+          </div>
+          <div class="menu-opt" onclick="openTab(event, 'gallery')">
+            <button class="menu-opt-gallery tablinks" ></button>
+            <button class="menu-btn" >Gallery</button>
+          </div>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="nav-main">
+          <div class="topnav">
+            <div class="buttonIn">
+            <input  class="search-input" id="search" type="text" placeholder="Search for breeds by name" />
+            <img class="search-btn" id="search" src="img/icons/search.svg" alt="search-icon" ></div>
+          <div class="emotion-btn">
+            <button class="emotion smile">
+              <!-- <img src="img/icons/smile.svg" alt="smile" class="emotion-img" /> -->
+            </button>
+            <button class="emotion heart">
+              <!-- <img src="img/icons/heart.svg" alt="heart" class="emotion-img" /> -->
+            </button>
+            <button class="emotion sad">
+              <!-- <img src="img/icons/sad.svg" alt="sad" class="emotion-img" /> -->
+            </button>
+          </div>
+        </div>
+          
+            <div class="nav-display-result">
+              <section style="display:none;" class="voting tabcontent" id="voting">
+                <div>
+                  <button>Back</button>
+                  <div>Voting</div>
+                </div>
+                <div><img /></div>
+                <div class="voting-img"></div>
+                <div class="voting-btn">
+                  <button>
+                    <img src="img/icons/smile.svg" alt="smiling face" class="emotion-img" />
+                  </button>
+                  <button>
+                    <img src="img/icons/heart.svg" alt="heart" class="emotion-img" />
+                  </button>
+                  <button><img src="img/icons/sad.svg" alt="sad face" class="emotion-img" /></button>
+                </div>
+                <div></div>
+              </section>
+
+              <section class="breeds tabcontent" id="breeds">
+                <div class="breeds-navbar"></div>
+                <button><img src="img/icons/back.svg"/></button>
+                <div>Breeds</div>
+                <label for="allBreeds"></label>
+                <select id="allBreeds" namu="allBreeds">
+                  <option value="all">All Breeds</option>
+                  <option value="abyssinian">Abyssinian</option>
+                  <option value="aegean">Aegean</option>
+                  <option value="american-bobtail">American Bobtail</option>
+                  <option value="american-curl">American Curl</option>
+                  <option value="american-shorthair">American Shorthair</option>
+                  <option value="american-wirehair">American Wirehair</option>
+                </select>
+                <label for="limit"></label>
+                <select id="limit" namu="limit">
+                  <option value="5">Limit: 5</option>
+                  <option value="10">Limit: 10</option>
+                  <option value="15">Limit: 15</option>
+                  <option value="20">Limit: 20</option>
+                </select>
+                <button><img src="img/icons/up-list.svg" alt="sort up"></button>
+                <button><img src="img/icons/down-list.svg" alt="sort down"></button>
+                <div class="breeds-display"></div>
+              </section>
+
+              <section class="gallery tabcontent" id="gallery">
+                <div class="nav-display">
+                  <div class="nav-display-navbar">
+                    <button class="navbar-back">Back</button>
+                    <button class="navbar-upload">Upload</button>
+                  </div>
+                  <div class="nav-display-menu"></div>
+                <div class="gallery-navbar">
+                  <div class="gallery-navbar-top"></div>
+                  <div class="gallery-navbar-main">
+                    <label for="order">ORDER</label>
+                    <select id="order" namu="order">
+                      <option value="random">Random</option>
+                      <option value="popular">Popular</option>
+                      <option value="new">New</option>
+                    </select>
+
+                    <label for="type">TYPE</label>
+                    <select id="type" namu="type">
+                      <option value="all">All</option>
+                      <option value="static">Static</option>
+                      <option value="animated">Animated</option>
+                    </select>
+                    <label for="breed">BREED</label>
+                    <select id="breed" namu="breed">
+                      <option value="none">None</option>
+                      <option value="popular">Popular</option>
+                      <option value="new">New</option>
+                    </select>
+                    <label for="limit">LIMIT</label>
+                    <select id="limit" namu="limit">
+                      <option value="random">Random</option>
+                      <option value="popular">Popular</option>
+                      <option value="new">New</option>
+                    </select>
+                    <button><img src="img/icons/update-spin.svg" alt="spin" /></button>
+                  </div>
+                </div>
+              </section>
+             
+
+             
+            </div>
+          </div>
+          <img src="img/girl-and-pet 1.png" alt="girl-and-pet" />
+        </div>
+      </div>
+      <script src="js/index.js"></script>
+    </main>
+  </body>
+</html>
