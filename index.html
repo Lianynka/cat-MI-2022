@@ -16,32 +16,31 @@
             <img class="header_logo" id="logo" src="img/logo.svg" alt="logo"
           /></a>
         </div>
-        <h1 class="menu-h1">Hi intern!</h1>
-        <p class="menu-text">Welcome to MI 2022 Front-end test</p>
-        <h2 class="menu-h2">Lets start using The Cat API</h2>
-        <div class="menu-options">
-          <div class="menu-opt" onclick="openTab(event, 'voting')">
-            <div class="menu-opt opt-voting" onclick="openTab(event, 'voting')">
-              <button class="menu-opt-voting tablinks" ></button>
-              <button class="menu-btn-voting menu-btn" >Voting</button>
+          <h1 class="menu-h1">Hi intern!</h1>
+          <p class="menu-text">Welcome to MI 2022 Front-end test</p>
+          <h2 class="menu-h2">Lets start using The Cat API</h2>
+            <div class="menu-options">            
+                <div class="menu-opt opt-voting" onclick="openTab(event, 'voting')">
+                  <button class="menu-opt-voting tablinks" ></button>
+                  <button class="menu-btn-voting menu-btn" >Voting</button>
+                </div>
+                <div class="menu-opt opt-voting" onclick="openTab(event, 'breeds')">
+                  <button class="menu-opt-breeds tablinks "></button>
+                  <button class="menu-btn-breeds menu-btn" >Breeds</button>
+                </div>
+                <div class="menu-opt opt-voting" onclick="openTab(event, 'gallery')">
+                  <button class="menu-opt-gallery tablinks " ></button>
+                  <button class="menu-btn-gallery menu-btn" >Gallery</button>
+                </div>
             </div>
-            <div class="menu-opt opt-voting" onclick="openTab(event, 'breeds')">
-              <button class="menu-opt-breeds tablinks "></button>
-              <button class="menu-btn-breeds menu-btn" >Breeds</button>
-            </div>
-            <div class="menu-opt opt-voting" onclick="openTab(event, 'gallery')">
-              <button class="menu-opt-gallery tablinks " ></button>
-              <button class="menu-btn-gallery menu-btn" >Gallery</button>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="navigation">
         <div class="nav-main">
           <div class="topnav">
             <div class="buttonIn">
             <input  class="search-input" id="search" type="text" placeholder="Search for breeds by name" />
-            <img class="search-btn" id="search" src="img/icons/search.svg" alt="search-icon" ></div>
+            <div class="search-btn" id="search"></div>
+            </div>
           <div class="emotion-btn">
             <button class="emotion smile">
               <!-- <img src="img/icons/smile.svg" alt="smile" class="emotion-img" /> -->
@@ -53,13 +52,13 @@
               <!-- <img src="img/icons/sad.svg" alt="sad" class="emotion-img" /> -->
             </button>
           </div>
-        </div>
+          </div>
           
-            <div class="nav-display-result">
+            <div id="nav-display-result">
               <section style="display:none;" class="voting tabcontent" id="voting">
-                <div>
-                  <button>Back</button>
-                  <div>Voting</div>
+                <div class="nav-menu">
+                  <button class="back-btn"></button>
+                  <div class="name-block">Voting</div>
                 </div>
                 <div><img /></div>
                 <div class="voting-img"></div>
@@ -75,10 +74,10 @@
                 <div></div>
               </section>
 
-              <section class="breeds tabcontent" id="breeds">
+              <section style="display:none;" class="breeds tabcontent" id="breeds">
                 <div class="breeds-navbar"></div>
-                <button><img src="img/icons/back.svg"/></button>
-                <div>Breeds</div>
+                <button class="back-btn"></button>
+                <div class="name-block">Breeds</div>
                 <label for="allBreeds"></label>
                 <select id="allBreeds" namu="allBreeds">
                   <option value="all">All Breeds</option>
@@ -101,10 +100,11 @@
                 <div class="breeds-display"></div>
               </section>
 
-              <section class="gallery tabcontent" id="gallery">
+              <section style="display:none;" class="gallery tabcontent" id="gallery">
                 <div class="nav-display">
                   <div class="nav-display-navbar">
-                    <button class="navbar-back">Back</button>
+                    <button class="back-btn"></button>
+                    <div class="name-block">Gallery</div>
                     <button class="navbar-upload">Upload</button>
                   </div>
                   <div class="nav-display-menu"></div>
@@ -112,42 +112,42 @@
                   <div class="gallery-navbar-top"></div>
                   <div class="gallery-navbar-main">
                     <label for="order">ORDER</label>
-                    <select id="order" namu="order">
+                    <select id="orderSelect" name="order">
                       <option value="random">Random</option>
                       <option value="popular">Popular</option>
                       <option value="new">New</option>
                     </select>
 
                     <label for="type">TYPE</label>
-                    <select id="type" namu="type">
+                    <select id="typeSelect" name="type">
                       <option value="all">All</option>
                       <option value="static">Static</option>
                       <option value="animated">Animated</option>
                     </select>
                     <label for="breed">BREED</label>
-                    <select id="breed" namu="breed">
+                    <select id="breedSelect" name="breed">
                       <option value="none">None</option>
                       <option value="popular">Popular</option>
                       <option value="new">New</option>
                     </select>
                     <label for="limit">LIMIT</label>
-                    <select id="limit" namu="limit">
-                      <option value="random">Random</option>
-                      <option value="popular">Popular</option>
-                      <option value="new">New</option>
+                    <select id="limitSelect" name="limit">
+                      <option value="5">5 items per page</option>
+                      <option value="10">10 items per page</option>
+                      <option value="15">15 items per page</option>
+                      <option value="20">20 items per page</option>
                     </select>
-                    <button><img src="img/icons/update-spin.svg" alt="spin" /></button>
+                    <button><img src="img/icons/update-spin.svg" alt="spin" onclick="getBreeds()" /></button>
                   </div>
                 </div>
               </section>
-             
-
+              <div class="nav-display-result"></div>
              
             </div>
           </div>
           <img src="img/girl-and-pet 1.png" alt="girl-and-pet" />
-        </div>
       </div>
+
       <script src="js/index.js"></script>
     </main>
   </body>

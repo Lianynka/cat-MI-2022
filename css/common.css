@@ -42,3 +42,32 @@ button{
     border: none;
     padding: 10px;
 }
+.back-btn{
+    background: url(../img/icons/back.svg), var(--add-color) ;
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 3em;
+    height: 3em;
+    padding: 10px;
+}
+.back-btn:hover{
+    background: url(../img/icons/back-w.svg), var(--main-color) ;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.name-block{
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--main-color);
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 5px 30px 5px 30px;
+    border-radius: 10px;
+    margin-left: 10px
+}

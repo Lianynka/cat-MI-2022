@@ -1,12 +1,16 @@
   .navigation{
     margin-right: 30px;
+    max-width: 680px;
   }
   .topnav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between
+    justify-content: space-between;
+    margin-bottom: 10px;
   }
-  
+  .search-input{
+    width: 100%;
+  }
   .topnav input[type=text] {
     padding: 6px;
     border: 2px solid transparent;
@@ -20,7 +24,6 @@
     padding: 13px 20px 13px;
     border-radius: 20px;    
     outline: none;
-    width: 27.65em;
     margin-right: 10px ;
 
   }
@@ -41,25 +44,34 @@
     position: relative;
     display: flex;
     flex-direction: row;
-  }
+    width: 69.11%;
 
+  }
   .search-btn{
     position: absolute;
     top: 0;
-    background-color: #FBE0DC;
+    background:url(../img/icons/search.svg), var(--add-color);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 10px;
     font-size: 17px;
     border-radius: 10px;
     right: 0px;
-    z-index: 5;
     border: none;
     top: 2px;
     cursor: pointer;
     float: left;
     width: 2.3em;
+    height: 2.3em ;
     margin-top: 10px;
     margin-right: 20px;
   } 
+  .search-btn:hover{
+    background: url(../img/icons/search-w.svg), var(--main-color);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   .emotion-btn{
     display:flex;
     flex-direction: row;
@@ -120,4 +132,5 @@
   }
   .tabcontent{
     display: none;
+    background-color: white;
   }

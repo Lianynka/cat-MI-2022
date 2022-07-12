@@ -37,10 +37,14 @@
 
 }
 .menu-options{
-    display:flex;
-    flex-direction: row;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap:1rem;
-    
+}
+@media (max-width:900px ){
+    .menu-options{
+    display: flex;
+    flex-direction: column;}
 }
 .menu-opt{
     justify-items: center;
@@ -72,14 +76,14 @@
     border: solid 4px white ;
 }
 
-/* .opt-voting:focus > .menu-btn-voting {
+.opt-voting:focus > .menu-btn-voting {
     background-color: #FF868E ;
     color: white ;
 }
 
 .opt-voting:focus > .menu-opt-voting {
     border: solid 4px #FBE0DC ;
-} */
+}
 
 .menu-opt-breeds{
     background: url(../img/pet-breeds.svg),var(--green-color);
