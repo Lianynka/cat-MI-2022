@@ -71,3 +71,22 @@ button{
     border-radius: 10px;
     margin-left: 10px
 }
+.nav-display{
+        padding: 20px;
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        display: flex;
+    justify-content: space-between;
+}
+.nav-menu{
+    background-color: white;
+    border-radius: 20px;
+    
+
+}
+#nav-display-result{
+    background-color: white;
+    border-radius: 20px;
+}

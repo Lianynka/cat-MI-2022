@@ -1,0 +1,99 @@
+.navbar-upload{
+    background: url(../img/icons/upload.svg), var(--add-color);
+    background-repeat: no-repeat;
+    background-position: 25% 50%;
+    background-size: 10%;
+    font-family: Jost;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 30px 12px 56px;
+    align-self:flex-end;
+}
+.navbar-upload:hover{
+    background: url(../img/icons/upload-w.svg), var(--main-color);
+    background-position: 25% 50%;
+    background-size: 10%;
+    background-repeat: no-repeat;
+    color: white;
+}
+.nav-display-navbar{
+    display: flex;
+    flex-direction: row ;
+    background-color: white;
+}
+.update-gallery{
+    background: url(../img/icons/update-spin.svg), white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    min-width: 40px;
+}
+.limit-class{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between ;
+}
+.gallery-navbar{
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius:20px ;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-left:20px;
+    padding-right:20px;
+}
+.gallery-nav-1{
+    display: flex;
+    border-radius:20px ;
+    flex-direction: row;
+}
+.gallery-nav-1:last-child{
+    margin-bottom:20px ;
+}
+.gallery-navbar-opt{
+    border-radius:20px ;
+    display: flex;
+    flex-direction: column;
+    min-width: 290px;
+    padding: 10px;
+}
+.gallery-pars-label{
+    font-family: Jost;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #8C8C8C;
+    padding-left: 5px;
+
+}
+.gallery-pars {
+    color:black;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    font-family: Jost;
+    border: 2px solid white;
+    padding: 8px;
+    justify-content:stretch;
+}
+.gallery-pars:hover{
+    border: 2px solid var(--add-color); 
+}
+.gallery-pars:active{
+    border: 2px solid var(--main-color); 
+}
+.gallery-pars > option{
+    background-color: white;
+    color: #8C8C8C
+}
+
+.limit-class-select{
+    display: flex;
+    flex-direction: column;
+}
