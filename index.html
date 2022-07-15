@@ -34,7 +34,8 @@
           </div>
         </div>
       </div>
-      <div class="navigation">
+      <img class ="mainPic" src="img/girl-and-pet 1.png" alt="girl-and-pet" style="background-color: var(--add-color);"/>
+      <div class="navigation" style="display:none">
         <div class="nav-main">
           <div class="topnav">
             <div class="buttonIn">
@@ -48,18 +49,15 @@
             </div>
             <div class="emotion-btn">
               <button class="emotion smile">
-                <!-- <img src="img/icons/smile.svg" alt="smile" class="emotion-img" /> -->
               </button>
-              <button class="emotion heart">
-                <!-- <img src="img/icons/heart.svg" alt="heart" class="emotion-img" /> -->
+              <button class="emotion heart" onclick="getFavourites()">
               </button>
               <button class="emotion sad">
-                <!-- <img src="img/icons/sad.svg" alt="sad" class="emotion-img" /> -->
               </button>
             </div>
           </div>
 
-          <div id="nav-display-result">
+          <div >
             <section
               style="display: none"
               class="voting tabcontent"
@@ -112,31 +110,29 @@
                     <button class="back-btn"></button>
                     <div class="name-block">Breeds</div>
                   </div>
-                  <label for="allBreeds"></label>
-                  <select id="allBreeds" namu="allBreeds">
-                    <option value="all">All Breeds</option>
-                    <option value="abyssinian">Abyssinian</option>
-                    <option value="aegean">Aegean</option>
-                    <option value="american-bobtail">American Bobtail</option>
-                    <option value="american-curl">American Curl</option>
-                    <option value="american-shorthair">
-                      American Shorthair
-                    </option>
-                    <option value="american-wirehair">American Wirehair</option>
-                  </select>
-                  <label for="limit"></label>
-                  <select id="limit" namu="limit">
-                    <option value="5">Limit: 5</option>
-                    <option value="10">Limit: 10</option>
-                    <option value="15">Limit: 15</option>
-                    <option value="20">Limit: 20</option>
-                  </select>
-                  <button>
-                    <img src="img/icons/up-list.svg" alt="sort up" />
-                  </button>
-                  <button>
-                    <img src="img/icons/down-list.svg" alt="sort down" />
-                  </button>
+                  <div class="breeds-display-nav">
+                    <label for="allBreeds"></label>
+                    <select class="breeds-nav" id="allBreeds" name="allBreeds">
+                      <option value="all">All Breeds</option>
+                      <option value="abyssinian">Abyssinian</option>
+                      <option value="aegean">Aegean</option>
+                      <option value="american-bobtail">American Bobtail</option>
+                      <option value="american-curl">American Curl</option>
+                      <option value="american-shorthair">
+                        American Shorthair
+                      </option>
+                      <option value="american-wirehair">American Wirehair</option>
+                    </select>
+                    <label for="limit"></label>
+                    <select class="breeds-nav" id="limitBreeds" name="limit">
+                      <option value="5">Limit: 5</option>
+                      <option value="10">Limit: 10</option>
+                      <option value="15">Limit: 15</option>
+                      <option value="20">Limit: 20</option>
+                    </select>
+                    <button class="sort-up"></button>
+                    <button class="sort-down"></button>
+                  </div>
                 </div>
                 <div class="breeds-display"></div>
               </div>
@@ -210,9 +206,10 @@
               </div>
             </section>
             <div class="nav-display-result"></div>
+            <div class="nav-display-result-favourites"></div>
           </div>
         </div>
-        <img src="img/girl-and-pet 1.png" alt="girl-and-pet" style="background-color: var(--add-color);"/>
+       
       </div>
 
       <script src="js/index.js"></script>
