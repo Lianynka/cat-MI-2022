@@ -1,0 +1,98 @@
+.nav-display-upload{
+    background-color: #F8F8F7;
+    border-radius: 20px;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 1000%;
+    height: 100%;
+    margin: 30px;
+    max-width: 680px;
+    /* overflow: hidden; */
+}
+.upload-header{
+    font-family: Jost;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 52px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1D1D1D;
+    background-color: #F8F8F7 ;
+    padding-left: 75px ;
+
+}
+.upload-text{
+    background-color: #F8F8F7 ;
+    padding-left: 56px;
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #8C8C8C;
+}
+.upload-link{
+    color: #FF868E;
+    background-color: #F8F8F7 ;
+}
+.upload-link:hover{
+    text-decoration: underline;
+}
+.drag-area{
+    border-radius: 20px;
+    border: dashed 4px  var(--add-color);
+    background: url(../img/icons/upload-bg.svg), white;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.drag-area:hover{
+    border: dashed 4px var(--main-color);
+    
+}
+.upload-close{
+    background: url(../img/icons/cross.svg), white;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 40px;
+    min-height: 40px;
+}
+.upload-close:hover{
+    background: url(../img/icons/cross-w.svg),var(--main-color);
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.drag-area-text{
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #8C8C8C;
+    padding: 145px 135px;
+    border-radius: 20px;
+    background-color: transparent;
+}
+b {
+    background-color: transparent;
+    color: #1D1D1D;
+}
+
+#display-image{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    
+  }
+
+  /* input {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+  } */

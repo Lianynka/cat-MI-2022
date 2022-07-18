@@ -139,11 +139,13 @@ async function getBreeds() {
   });
 }
 async function getFavourites() {
-  tabcontent[2].style.display = "none";
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
   var resultFavourites = document.querySelector(
     ".nav-display-result-favourites"
   );
-
+  //fetch for adding pics to the Favourities list
   var favouritePics = await (
     await fetch("https://api.thecatapi.com/v1/favourites", {
       headers: { "x-api-key": "27958382-a5cb-4854-86b7-fc4cf6850b66" },
@@ -166,3 +168,26 @@ async function getFavourites() {
     };
   });
 }
+//open upload menu
+function openUpload() {
+  var openUploadP = document.getElementById("nav-display-upload");
+  openUploadP.style.display = "block";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+//close upload menu
+function closeUpload() {
+  document.getElementById("nav-display-upload").style.display = "none";
+  document.body.style.backgroundColor = "white";
+}
+
+const image_input = document.querySelector("#image-input");
+image_input.addEventListener("change", function () {
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    const uploaded_image = reader.result;
+    document.querySelector(
+      "#display-image"
+    ).style.backgroundImage = `url(${uploaded_image})`;
+  });
+  reader.readAsDataURL(this.files[0]);
+});
