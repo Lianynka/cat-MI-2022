@@ -1,9 +1,11 @@
 var tabcontent = document.getElementsByClassName("tabcontent");
+console.log(tabcontent);
 var mainPic = document.getElementsByClassName("mainPic");
 var navigation = document.getElementsByClassName("navigation");
 var container = document.querySelector(".nav-display-result");
-container.innerHTML = "";
+var breedsContainer = document.querySelector(".breeds-display");
 
+//changing tab in navigation container
 function openTab(evt, tabName) {
   var i, tablinks;
   for (i = 0; i < tabcontent.length; i++) {
@@ -47,7 +49,7 @@ function openTab(evt, tabName) {
 
   var params = new URLSearchParams();
   params.set("limit", limitBreeds);
-  if (allBreeds) {
+  if (allBreeds !== "0") {
     params.set("breed_id", allBreeds);
   }
 
@@ -74,12 +76,13 @@ function openTab(evt, tabName) {
 
   searchParams.map((resultBreeds) => {
     var newBreeds = new Image();
-    newBreeds.src = resultBreeds.image.url;
-    container.appendChild(newBreeds);
+    newBreeds.src = resultBreeds.url;
+    breedsContainer.appendChild(newBreeds);
   });
 })();
 
 async function getBreeds() {
+  container.innerHTML = "";
   var type = document.getElementById("typeSelect");
   var typeValue = type.value;
 
