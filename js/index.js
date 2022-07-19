@@ -180,6 +180,38 @@ function closeUpload() {
   document.body.style.backgroundColor = "white";
 }
 
+//upload a pic to server
+async function uploadPic() {
+  var image_input = document.querySelector("#image-input");
+  var upload_btn = document.querySelector(".upload-btn");
+  var nofile_selected = document.querySelector(".nofile-selected");
+  var message = document.querySelector(".upload-message");
+
+  var data = new FormData();
+  data.append("file", image_input.files[0]);
+
+  var possibleCat = await (
+    await fetch("https://api.thecatapi.com/v1/images/upload", {
+      method: "POST",
+      body: data,
+      headers: {
+        "x-api-key": "27958382-a5cb-4854-86b7-fc4cf6850b66",
+      },
+    })
+  ).json();
+
+  if (possibleCat.approved) {
+    image_input.style.backgroundImage = "none";
+    upload_btn.style.display = "none";
+    nofile_selected.innerHTML = "No file seleced";
+    message.innerHTML = "Thanks for the Upload - Cat found!";
+  } else {
+    document.querySelector(".drag-area").style.backgroundColor = "#FBE0DC";
+    upload_btn.style.display = "none";
+    message.innerHTML = "No Cat found - try a different one";
+  }
+}
+//upload an img on the page
 const image_input = document.querySelector("#image-input");
 image_input.addEventListener("change", function () {
   const reader = new FileReader();
@@ -188,6 +220,9 @@ image_input.addEventListener("change", function () {
     document.querySelector(
       "#display-image"
     ).style.backgroundImage = `url(${uploaded_image})`;
+
+    // uploadPic();
   });
   reader.readAsDataURL(this.files[0]);
 });
+//cat voting

@@ -194,24 +194,74 @@
                           <option value="20">20 items per page</option>
                         </select>
                         <button
-                        class="update-gallery"
-                        onclick="getBreeds()"
-                      ></button> </div>
-                        </div>
+                          class="update-gallery"
+                          onclick="getBreeds()"
+                        ></button>
+                      </div>
                     </div>
                   </div>
-                    
-                  </div>
                 </div>
+                <div class="nav-display-result"></div>
               </div>
             </section>
-            <div class="nav-display-result"></div>
+
             <div class="nav-display-result-favourites"></div>
+            <div
+              class="nav-display-upload"
+              id="nav-display-upload"
+              style="display: none"
+            >
+              <button class="upload-close" onclick="closeUpload()"></button>
+              <h2 class="upload-header">Upload a .jpg or .png Cat Image</h2>
+              <p class="upload-text">
+                Any uploads must comply with the
+                <a href="https://thecatapi.com/privacy" class="upload-link"
+                  >upload guidelines</a
+                >
+                or face deletion.
+              </p>
+
+              <div class="drag-area">
+                <div id="display-image">
+                  <input
+                    type="file"
+                    id="image-input"
+                    accept=" image/png, image/jpg"
+                  />
+                  <p class="drag-area-text">
+                    <b>Drag here</b> your file or <b>Click here</b> to upload
+                  </p>
+                </div>
+              </div>
+              <button class="upload-btn" onclick="uploadPic()">
+                UPload Foto
+              </button>
+              <div class="nofile-selected"></div>
+              <div class="upload-message"></div>
+            </div>
           </div>
         </div>
-       
       </div>
-
+      <!-- <div
+        class="nav-display-upload"
+        id="nav-display-upload"
+        style="display: none"
+      >
+        <button class="upload-close" onclick="closeUpload()"></button>
+        <h2 class="upload-header">Upload a .jpg or .png Cat Image</h2>
+        <p class="upload-text">
+          Any uploads must comply with the
+          <a href="https://thecatapi.com/privacy" class="upload-link"
+            >upload guidelines</a
+          >
+          or face deletion.
+        </p>
+        <div class="drag-area">
+          <p class="drag-area-text">
+            <b>Drag here</b> your file or <b>Click here</b> to upload
+          </p>
+        </div>
+      </div> -->
       <script src="js/index.js"></script>
     </main>
   </body>
