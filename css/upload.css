@@ -47,6 +47,9 @@
     background: url(../img/icons/upload-bg.svg), white;
     background-repeat: no-repeat;
     background-position: center;
+    height: 320px;
+width: 640px;
+
     
 }
 .drag-area:hover{

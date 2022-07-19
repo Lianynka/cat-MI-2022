@@ -7,7 +7,8 @@
     margin-left: 3px;
     margin-right: 3px;
 }
-.sort-up:hover{ background: url(../img/icons/up-list-r.svg), #F8F8F7;
+.sort-up:hover{ 
+    background: url(../img/icons/up-list-r.svg), #F8F8F7;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 52.5%;

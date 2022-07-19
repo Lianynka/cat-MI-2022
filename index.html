@@ -34,8 +34,13 @@
           </div>
         </div>
       </div>
-      <img class ="mainPic" src="img/girl-and-pet 1.png" alt="girl-and-pet" style="background-color: var(--add-color);"/>
-      <div class="navigation" style="display:none">
+      <img
+        class="mainPic"
+        src="img/girl-and-pet 1.png"
+        alt="girl-and-pet"
+        style="background-color: var(--add-color)"
+      />
+      <div class="navigation" style="display: none">
         <div class="nav-main">
           <div class="topnav">
             <div class="buttonIn">
@@ -48,16 +53,13 @@
               <div class="search-btn" id="search"></div>
             </div>
             <div class="emotion-btn">
-              <button class="emotion smile">
-              </button>
-              <button class="emotion heart" onclick="getFavourites()">
-              </button>
-              <button class="emotion sad">
-              </button>
+              <button class="emotion smile"></button>
+              <button class="emotion heart" onclick="getFavourites()"></button>
+              <button class="emotion sad"></button>
             </div>
           </div>
 
-          <div >
+          <div>
             <section
               style="display: none"
               class="voting tabcontent"
@@ -73,27 +75,9 @@
                 <div><img /></div>
                 <div class="voting-img"></div>
                 <div class="voting-btn">
-                  <button>
-                    <img
-                      src="img/icons/smile.svg"
-                      alt="smiling face"
-                      class="emotion-img"
-                    />
-                  </button>
-                  <button>
-                    <img
-                      src="img/icons/heart.svg"
-                      alt="heart"
-                      class="emotion-img"
-                    />
-                  </button>
-                  <button>
-                    <img
-                      src="img/icons/sad.svg"
-                      alt="sad face"
-                      class="emotion-img"
-                    />
-                  </button>
+                  <button class="smile"></button>
+                  <button class="heart"></button>
+                  <button class="sad"></button>
                 </div>
                 <div></div>
               </div>
@@ -113,15 +97,7 @@
                   <div class="breeds-display-nav">
                     <label for="allBreeds"></label>
                     <select class="breeds-nav" id="allBreeds" name="allBreeds">
-                      <option value="all">All Breeds</option>
-                      <option value="abyssinian">Abyssinian</option>
-                      <option value="aegean">Aegean</option>
-                      <option value="american-bobtail">American Bobtail</option>
-                      <option value="american-curl">American Curl</option>
-                      <option value="american-shorthair">
-                        American Shorthair
-                      </option>
-                      <option value="american-wirehair">American Wirehair</option>
+                      <option value="0">All Breeds</option>
                     </select>
                     <label for="limit"></label>
                     <select class="breeds-nav" id="limitBreeds" name="limit">
@@ -149,40 +125,57 @@
                     <button class="back-btn"></button>
                     <div class="name-block">Gallery</div>
                   </div>
-                  <button class="navbar-upload">Upload</button>
+                  <button onclick="openUpload()" class="navbar-upload">
+                    Upload
+                  </button>
                 </div>
                 <div class="gallery-navbar">
                   <div class="gallery-nav-1">
                     <div class="gallery-navbar-opt">
-                    <label class="gallery-pars-label" for="order">ORDER</label>
-                    <select class="gallery-pars" id="orderSelect" name="order">
-                      <option value="random">Random</option>
-                      <option value="popular">Popular</option>
-                      <option value="new">New</option>
-                    </select>
+                      <label class="gallery-pars-label" for="order"
+                        >ORDER</label
+                      >
+                      <select
+                        class="gallery-pars"
+                        id="orderSelect"
+                        name="order"
+                      >
+                        <option value="random">Random</option>
+                        <option value="popular">Popular</option>
+                        <option value="new">New</option>
+                      </select>
                     </div>
                     <div class="gallery-navbar-opt">
-                    <label class="gallery-pars-label" for="type">TYPE</label>
-                    <select class="gallery-pars" id="typeSelect" name="type">
-                      <option value="all">All</option>
-                      <option value="static">Static</option>
-                      <option value="animated">Animated</option>
-                    </select></div></div>
+                      <label class="gallery-pars-label" for="type">TYPE</label>
+                      <select class="gallery-pars" id="typeSelect" name="type">
+                        <option value="all">All</option>
+                        <option value="static">Static</option>
+                        <option value="animated">Animated</option>
+                      </select>
+                    </div>
+                  </div>
                   <div class="gallery-nav-1">
                     <div class="gallery-navbar-opt">
-                      <label class="gallery-pars-label" for="breed">BREED</label>
-                      <select class="gallery-pars" id="breedSelect" name="breed">
+                      <label class="gallery-pars-label" for="breed"
+                        >BREED</label
+                      >
+                      <select
+                        class="gallery-pars"
+                        id="breedSelect"
+                        name="breed"
+                      >
                         <option value="none">None</option>
                         <option value="popular">Popular</option>
                         <option value="new">New</option>
-                      </select></div>
-                      <div class="gallery-navbar-opt">
+                      </select>
+                    </div>
+                    <div class="gallery-navbar-opt">
                       <!-- <div class="limit-class ">
                         <div class="limit-class-select"> -->
-                        <label class="gallery-pars-label" for="limit"
-                          >LIMIT</label
-                        >
-                        <div class="limit-class">
+                      <label class="gallery-pars-label" for="limit"
+                        >LIMIT</label
+                      >
+                      <div class="limit-class">
                         <select
                           class="gallery-pars"
                           id="limitSelect"
