@@ -19,7 +19,7 @@
         <h1 class="menu-h1">Hi intern!</h1>
         <p class="menu-text">Welcome to MI 2022 Front-end test</p>
         <h2 class="menu-h2">Lets start using The Cat API</h2>
-        <div class="menu-options">
+        <div class="menu-options" id="menu-options">
           <div class="menu-opt opt-voting" onclick="openTab(event, 'voting')">
             <button class="menu-opt-voting tablinks"></button>
             <button class="menu-btn-voting menu-btn">Voting</button>
@@ -28,7 +28,10 @@
             <button class="menu-opt-breeds tablinks"></button>
             <button class="menu-btn-breeds menu-btn">Breeds</button>
           </div>
-          <div class="menu-opt opt-voting" onclick="openTab(event, 'gallery')">
+          <div
+            class="menu-opt opt-voting"
+            onclick="openTab(event, 'gallery'), getBreeds() "
+          >
             <button class="menu-opt-gallery tablinks"></button>
             <button class="menu-btn-gallery menu-btn">Gallery</button>
           </div>
@@ -44,18 +47,23 @@
         <div class="nav-main">
           <div class="topnav">
             <div class="buttonIn">
+              <div onclick="humberger()" class="humberger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
               <input
                 class="search-input"
                 id="search"
                 type="text"
                 placeholder="Search for breeds by name"
               />
-              <div class="search-btn" id="search"></div>
+              <div class="search-btn" id="search" onclick="search()"></div>
             </div>
             <div class="emotion-btn">
-              <button class="emotion smile"></button>
+              <button class="emotion smile" onclick="getlike()"></button>
               <button class="emotion heart" onclick="getFavourites()"></button>
-              <button class="emotion sad"></button>
+              <button class="emotion sad" onclick="getdislike()"></button>
             </div>
           </div>
 
@@ -75,9 +83,9 @@
                 <div><img /></div>
                 <div class="voting-img"></div>
                 <div class="voting-btn">
-                  <button class="smile"></button>
+                  <button class="smile" onclick="like()"></button>
                   <button class="heart"></button>
-                  <button class="sad"></button>
+                  <button class="sad" onclick="dislike()"></button>
                 </div>
                 <div></div>
               </div>
@@ -106,8 +114,8 @@
                       <option value="15">Limit: 15</option>
                       <option value="20">Limit: 20</option>
                     </select>
-                    <button class="sort-up"></button>
-                    <button class="sort-down"></button>
+                    <button class="sort-up" onclick="sortMenuZ()"></button>
+                    <button class="sort-down" onclick="sortMenu()"></button>
                   </div>
                 </div>
                 <div class="breeds-display"></div>
@@ -194,47 +202,16 @@
                     </div>
                   </div>
                 </div>
-                <div class="nav-display-result"></div>
+                <!-- <div class="nav-display-result"></div> -->
               </div>
             </section>
-
+            <div class="nav-display-result"></div>
             <div class="nav-display-result-favourites"></div>
-            <div
-              class="nav-display-upload"
-              id="nav-display-upload"
-              style="display: none"
-            >
-              <button class="upload-close" onclick="closeUpload()"></button>
-              <h2 class="upload-header">Upload a .jpg or .png Cat Image</h2>
-              <p class="upload-text">
-                Any uploads must comply with the
-                <a href="https://thecatapi.com/privacy" class="upload-link"
-                  >upload guidelines</a
-                >
-                or face deletion.
-              </p>
-
-              <div class="drag-area">
-                <div id="display-image">
-                  <input
-                    type="file"
-                    id="image-input"
-                    accept=" image/png, image/jpg"
-                  />
-                  <p class="drag-area-text">
-                    <b>Drag here</b> your file or <b>Click here</b> to upload
-                  </p>
-                </div>
-              </div>
-              <button class="upload-btn" onclick="uploadPic()">
-                UPload Foto
-              </button>
-              <div class="nofile-selected"></div>
-              <div class="upload-message"></div>
-            </div>
           </div>
         </div>
       </div>
+      <div class="search-result"></div>
+
       <!-- <div
         class="nav-display-upload"
         id="nav-display-upload"
@@ -255,7 +232,49 @@
           </p>
         </div>
       </div> -->
+      <div
+        class="nav-display-upload"
+        id="nav-display-upload"
+        style="display: none"
+      >
+        <div class="flex">
+          <div class="nav-dispaly-message">
+            <button class="upload-close" onclick="closeUpload()"></button>
+            <h2 class="upload-header">Upload a .jpg or .png Cat Image</h2>
+            <p class="upload-text">
+              Any uploads must comply with the
+              <a href="https://thecatapi.com/privacy" class="upload-link"
+                >upload guidelines</a
+              >
+              or face deletion.
+            </p>
+
+            <div class="drag-area">
+              <div id="display-image">
+                <span class="drag-area-text">
+                  <b>Drag here</b> your file or <b>Click here</b> to upload
+                </span>
+                <input
+                  type="file"
+                  id="image-input"
+                  accept=" image/png, image/jpg"
+                  class="drag-zone-input"
+                  name="myFile"
+                />
+              </div>
+            </div>
+            <button class="upload-btn" onclick="uploadPic()">
+              UPload Foto
+            </button>
+            <div class="nofile-selected"></div>
+            <div class="upload-message"></div>
+          </div>
+        </div>
+      </div>
       <script src="js/index.js"></script>
+      <script src="js/breeds.js"></script>
+      <script src="js/upload.js"></script>
+      <script src="js/votes.js"></script>
     </main>
   </body>
 </html>
