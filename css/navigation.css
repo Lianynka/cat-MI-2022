@@ -1,9 +1,46 @@
   .navigation{
     margin-right: 30px;
     max-width: 680px;
-    background-color: white;
     border-radius: 20px;
   }
+  @media (max-width:768px){
+    .mainPic {
+        display: none;
+    }
+    .humberger{
+      display: block;
+    } 
+    .humber:active .bar:nth-child(2){
+      opacity: 0;
+    }
+    .humber:active .bar:nth-child(1){
+      transform: translateY(8px)rotate(45deg);
+    }
+    .humber:active .bar:nth-child(1){
+      transform: translateY(8px)rotate(45deg);
+    }
+    .menu-option{
+      position:fixed;
+    }
+}
+.humberger{
+  cursor: pointer;
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+  margin-right: 10px;
+  display:none;
+}
+.bar {
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin: 6px auto;
+  -webkit-transition: all 0.3s ease-in-out ;
+  transition: all 0.3s ease-in-out ;
+  background-color: var(--main-color);
+
+}
   .topnav {
     display: flex;
     flex-direction: row;

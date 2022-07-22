@@ -41,10 +41,15 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap:1rem;
 }
-@media (max-width:900px ){
+/* @media (max-width:900px ){
     .menu-options{
     display: flex;
     flex-direction: column;}
+} */
+@media (max-width:768px){
+    .mainPic {
+        display: none;
+    }
 }
 .menu-opt{
     justify-items: center;
@@ -67,32 +72,42 @@
     border-radius: 20px;
     cursor: pointer;
 }
-.opt-voting:hover > .menu-btn-voting {
+/* .opt-voting:hover > .menu-btn-voting {
     background-color: var(--add-color) ;
     color: var(--main-color) ;
 }
 
 .opt-voting:hover > .menu-opt-voting {
     border: solid 4px white ;
-}
+} */
 
 /* .menu-btn-voting:focus{
     background-color: #FF868E ;
     color: white ;
 } */
-.opt-voting:focus-within > .menu-btn-voting {
-    background-color: var(--main-color) ;
-    color: white ;
-}
-.opt-voting:focus-within > .menu-opt-voting {
-    border: solid 4px #FBE0DC ;
-}
+
 .opt-voting:active > .menu-btn-voting {
     background-color: var(--main-color) ;
     color: white ;
 }
 .opt-voting:active > .menu-opt-voting {
     border: solid 4px #FBE0DC ;
+}
+
+
+.menu-opt:hover > .tablinks{
+    border: solid 4px white ;
+}
+.menu-opt:hover > .menu-btn{
+    background-color: var(--add-color) ;
+    color: var(--main-color) ;}
+.menu-opt:focus-within > .tablinks{
+    border: solid 4px #FBE0DC ;
+}
+.menu-opt:focus-within > .menu-btn{
+    background-color: var(--main-color) ;
+    color: white ;
+    
 }
 .menu-opt-breeds{
     background: url(../img/pet-breeds.svg),var(--green-color);
@@ -106,15 +121,6 @@
    padding: 10px;
 }
 
-.opt-voting:hover > .menu-btn-breeds {
-    background-color: var(--add-color) ;
-    color: var(--main-color) ;
-}
-
-.opt-voting:hover > .menu-opt-breeds {
-    border: solid 4px white ;
-}
-
 .menu-opt-gallery{
     padding: 10px;
     background: url(../img/images-search.svg),#FFD280;
@@ -126,15 +132,7 @@
     border: solid 4px #FFEDCC    ;
     border-radius: 20px;    
 }
-.opt-voting:hover > .menu-btn-gallery {
-    background-color: var(--add-color) ;
-    color: var(--main-color) ;
-}
 
-.opt-voting:hover > .menu-opt-gallery {
-    border: solid 4px white ;
-   
-}
 .menu-btn{
     color: var(--main-color);
     background-color: white;
