@@ -5,9 +5,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* background-color: #F8F8F7; */
+}
+body{
     background-color: #F8F8F7;
 }
-
 :root {
     font-family: 'Heebo', 'PT Sans', sans-serif;
     --main-color: #FF868E;
@@ -90,21 +92,19 @@ button{
     background-color: white;
     border-radius: 20px;
 }
-.nav-display-result{
+
+/* .breeds-display {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     background-color: white;
     border-radius: 0px 0px 10px 10px;
-    padding: 20px;
-}
-.tooltip{
+    margin: 10px;
     position: relative;
     padding: 0px 0px 85% 0px;
-    
 }
-.tooltip > img{
-    position: absolute;
+.breeds-display > img{
+    
     top:0;
     left:0;
     width: 100%;
@@ -112,35 +112,10 @@ button{
     object-fit: cover;
     border-radius: 20px;
 }
-.tooltip:first-child, .tooltip:nth-child(16){
-    /* grid-column: span 1; */
+.breeds-display:first-child {
     grid-row: span 2 ;
 }
-.tooltip:nth-child(4), .tooltip:nth-child(19){
+.breeds-display:nth-child(4){
     grid-column: span 2;
     grid-row: span 2;
-}
-.tooltip:nth-child(8), .tooltip:nth-child(11) {
-    grid-row: span 2 ;
-}
-.tooltip:nth-child(9), .tooltip:nth-child(14){
-    grid-column: span 2;
-    grid-row: span 2;
-}
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-  
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-  }
-  
-.tooltip:hover .tooltiptext {
-visibility: visible;
-}
+} */
