@@ -1,15 +1,28 @@
 .nav-display-upload{
-    background-color: #F8F8F7;
+    background-color: rgba(29, 29, 29, 0.6);
     border-radius: 20px;
     padding: 20px;
     position: fixed;
     top: 0;
     right: 0;
-    width: 1000%;
+    width: 100%;
     height: 100%;
-    margin: 30px;
-    max-width: 680px;
     /* overflow: hidden; */
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.nav-dispaly-message{
+    background-color: #F8F8F7 ;
+    margin: 30px; 
+    /* max-width: 680px;  */
+    overflow: hidden; 
+    border-radius: 20px;
+    height: 100vh;
+    padding: 20px;
+
 }
 .upload-header{
     font-family: Jost;
@@ -20,12 +33,14 @@
     text-align: left;
     color: #1D1D1D;
     background-color: #F8F8F7 ;
-    padding-left: 75px ;
+    padding-left: 55px ;
+    padding-bottom: 10px;
+    margin-top: 50px;
 
 }
 .upload-text{
     background-color: #F8F8F7 ;
-    padding-left: 56px;
+    padding-left: 36px;
     font-family: Jost;
     font-size: 20px;
     font-weight: 400;
@@ -42,18 +57,22 @@
     text-decoration: underline;
 }
 .drag-area{
+    margin-top: 40px;
+    border: dashed 4px var(--add-color);
+    min-height: 20em;
     border-radius: 20px;
-    border: dashed 4px  var(--add-color);
-    background: url(../img/icons/upload-bg.svg), white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: url(../img/icons/upload-bg.svg), white; */
     background-repeat: no-repeat;
     background-position: center;
-    height: 320px;
-width: 640px;
 
-    
+
 }
 .drag-area:hover{
     border: dashed 4px var(--main-color);
+    border-radius: 20px;
     
 }
 .upload-close{
@@ -62,6 +81,7 @@ width: 640px;
     background-position: center;
     min-width: 40px;
     min-height: 40px;
+    transform: translateX(1490%);
 }
 .upload-close:hover{
     background: url(../img/icons/cross-w.svg),var(--main-color);
@@ -75,11 +95,10 @@ width: 640px;
     font-weight: 400;
     line-height: 30px;
     letter-spacing: 0em;
-    text-align: left;
     color: #8C8C8C;
-    padding: 145px 135px;
     border-radius: 20px;
     background-color: transparent;
+    cursor: pointer;  
 }
 b {
     background-color: transparent;
