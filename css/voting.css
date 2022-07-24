@@ -1,0 +1,59 @@
+.voting-img > img {
+    border-radius: 20px;
+    padding: 20px;
+}
+.voting-btn > button{
+    height: 80px;
+
+}
+.voting-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.smile-btn{
+    background: url(../img/icons/smile-w.svg), #97EAB9;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    height: 80px;
+    width: 80px;
+}
+.smile-btn:hover {
+    background: url(../img/icons/green-smile.svg), rgba(151, 234, 185, 0.3);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+.heart-btn{
+    background: url(../img/icons/heart-w.svg), var(--main-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    height: 80px;
+    width: 80px;
+}
+.heart-btn:hover {
+    background: url(../img/icons/red-heart.svg), var(--add-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+.sad-btn{
+    background: url(../img/icons/sad-w.svg), rgb(255, 210, 128);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    height: 80px;
+    width: 80px;
+}
+.sad-btn:hover {
+    background: url(../img/icons/yellow-smile.svg), rgba(255, 210, 128, 0.3);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+.upload-btn{
+    margin: 40px;
+    justify-content: center;
+}

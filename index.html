@@ -20,7 +20,10 @@
         <p class="menu-text">Welcome to MI 2022 Front-end test</p>
         <h2 class="menu-h2">Lets start using The Cat API</h2>
         <div class="menu-options" id="menu-options">
-          <div class="menu-opt opt-voting" onclick="openTab(event, 'voting')">
+          <div
+            class="menu-opt opt-voting"
+            onclick="openTab(event, 'voting'), updateBreeds()"
+          >
             <button class="menu-opt-voting tablinks"></button>
             <button class="menu-btn-voting menu-btn">Voting</button>
           </div>
@@ -82,10 +85,12 @@
                 </div>
                 <div><img /></div>
                 <div class="voting-img"></div>
-                <div class="voting-btn">
-                  <button class="smile" onclick="like()"></button>
-                  <button class="heart"></button>
-                  <button class="sad" onclick="dislike()"></button>
+                <div class="voting-box">
+                  <div class="voting-btn">
+                    <button class="smile-btn" onclick="like()"></button>
+                    <button class="heart-btn"></button>
+                    <button class="sad-btn" onclick="dislike()"></button>
+                  </div>
                 </div>
                 <div></div>
               </div>
@@ -104,18 +109,28 @@
                   </div>
                   <div class="breeds-display-nav">
                     <label for="allBreeds"></label>
-                    <select class="breeds-nav" id="allBreeds" name="allBreeds">
+                    <select
+                      class="breeds-nav"
+                      id="allBreeds"
+                      name="allBreeds"
+                      onchange="updateBreeds()"
+                    >
                       <option value="0">All Breeds</option>
                     </select>
                     <label for="limit"></label>
-                    <select class="breeds-nav" id="limitBreeds" name="limit">
+                    <select
+                      class="breeds-nav"
+                      id="limitBreeds"
+                      name="limit"
+                      onchange="updateBreeds()"
+                    >
                       <option value="5">Limit: 5</option>
                       <option value="10">Limit: 10</option>
                       <option value="15">Limit: 15</option>
                       <option value="20">Limit: 20</option>
                     </select>
                     <button class="sort-up" onclick="sortMenuZ()"></button>
-                    <button class="sort-down" onclick="sortMenu()"></button>
+                    <button class="sort-down" onclick="sortMenuA()"></button>
                   </div>
                 </div>
                 <div class="breeds-display"></div>
@@ -211,27 +226,6 @@
         </div>
       </div>
       <div class="search-result"></div>
-
-      <!-- <div
-        class="nav-display-upload"
-        id="nav-display-upload"
-        style="display: none"
-      >
-        <button class="upload-close" onclick="closeUpload()"></button>
-        <h2 class="upload-header">Upload a .jpg or .png Cat Image</h2>
-        <p class="upload-text">
-          Any uploads must comply with the
-          <a href="https://thecatapi.com/privacy" class="upload-link"
-            >upload guidelines</a
-          >
-          or face deletion.
-        </p>
-        <div class="drag-area">
-          <p class="drag-area-text">
-            <b>Drag here</b> your file or <b>Click here</b> to upload
-          </p>
-        </div>
-      </div> -->
       <div
         class="nav-display-upload"
         id="nav-display-upload"
@@ -250,7 +244,7 @@
             </p>
 
             <div class="drag-area">
-              <div id="display-image">
+              <div class="display-image">
                 <span class="drag-area-text">
                   <b>Drag here</b> your file or <b>Click here</b> to upload
                 </span>
@@ -264,7 +258,7 @@
               </div>
             </div>
             <button class="upload-btn" onclick="uploadPic()">
-              UPload Foto
+              Upload Foto
             </button>
             <div class="nofile-selected"></div>
             <div class="upload-message"></div>

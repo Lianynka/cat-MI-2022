@@ -57,6 +57,9 @@
     text-decoration: underline;
 }
 .drag-area{
+    background: url(../img/icons/upload-bg.svg), white;
+    background-repeat: no-repeat;
+    background-position: center;
     margin-top: 40px;
     border: dashed 4px var(--add-color);
     min-height: 20em;
@@ -64,11 +67,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: url(../img/icons/upload-bg.svg), white; */
-    background-repeat: no-repeat;
-    background-position: center;
-
-
+    padding: 20px 40px 20px 40px;
+}
+.display-image{ 
+    height: 280px;
+width: 560px;
+border-radius: 10px;
+    background-size: cover;
 }
 .drag-area:hover{
     border: dashed 4px var(--main-color);
@@ -108,9 +113,10 @@ b {
     display: none;
 }
 .drop-zone__thumb {
+    /* padding: 20px 40px 20px 40px; */
     width: 100%;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
     background-color: #cccccc;
     background-size: cover;

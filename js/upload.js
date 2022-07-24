@@ -2,7 +2,7 @@ var image_input = document.querySelector("#image-input");
 var upload_btn = document.querySelector(".upload-btn");
 var nofile_selected = document.querySelector(".nofile-selected");
 var message = document.querySelector(".upload-message");
-var image_container = document.querySelector("#display-image");
+var image_container = document.querySelector(".display-image");
 const drag_area = document.querySelector(".drap-area");
 
 //open upload menu
@@ -44,9 +44,8 @@ async function uploadPic() {
   }
 }
 //upload an img on the page
-
 image_input.addEventListener("change", function () {
-  //   drag_area.backgroundImage = "none";
+  drag_area.backgroundImage = "none";
   const reader = new FileReader();
   reader.addEventListener("load", () => {
     const uploaded_image = reader.result;
@@ -56,7 +55,7 @@ image_input.addEventListener("change", function () {
 });
 
 document.querySelectorAll(".drag-zone-input").forEach((inputElement) => {
-  const dropZoneElement = inputElement.closest("#display-image");
+  const dropZoneElement = inputElement.closest(".display-image");
 
   dropZoneElement.addEventListener("click", (e) => {
     inputElement.click();

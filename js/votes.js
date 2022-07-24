@@ -1,23 +1,3 @@
-async function like() {
-  votingImg.innerHTML = "";
-  console.log(votingImg);
-  getRandomImg();
-  console.log(votingImg);
-  // imgId = randBreed.image.id;
-
-  var likeRequest = await fetch("https://api.thecatapi.com/v1/votes", {
-    method: "POST",
-    headers: {
-      "x-api-key": "27958382-a5cb-4854-86b7-fc4cf6850b66",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ image_id: imgId, value: 1 }),
-  });
-
-  var likeResponse = await likeRequest.json();
-  console.log(likeResponse);
-}
-like();
 async function dislike() {
   votingImg.innerHTML = "";
   getRandomImg();
@@ -47,31 +27,42 @@ async function getlike() {
   ).json();
   var likes = likedImg.filter((item) => item.value === 1);
   console.log(likes);
-  // likes.map((resultFav) => {
-  //   var imgCotainer = document.createElement("div");
-  //   imgCotainer.className = "tooltip";
-  //   var newFav = new Image();
-  //   newFav.src = resultFav.image.url;
-  //   imgCotainer.appendChild(newFav);
-  //   container.appendChild(imgCotainer);
-  // });
+  likes.map(async (resultFav) => {
+    var imgCotainer = document.createElement("div");
+    imgCotainer.className = "tooltip";
+    var newFav = new Image();
+    var get_pic = await (
+      await fetch("https://api.thecatapi.com/v1/images/" + resultFav.image_id, {
+        headers: { "x-api-key": "27958382-a5cb-4854-86b7-fc4cf6850b66" },
+      })
+    ).json();
+    newFav.src = get_pic.url;
+    imgCotainer.appendChild(newFav);
+    container.appendChild(imgCotainer);
+  });
 }
-async function dislike() {
+async function getdislike() {
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
     container.innerHTML = "";
   }
-  var dislikedImg = await (
+  var likedImg = await (
     await fetch("https://api.thecatapi.com/v1/votes", {
       headers: { "x-api-key": "27958382-a5cb-4854-86b7-fc4cf6850b66" },
     })
   ).json();
-  var dislikes = dislikedImg.filter((item) => item.value === 1);
-  dislikes.map((resultFav) => {
+  var likes = likedImg.filter((item) => item.value === 0);
+  console.log(likes);
+  likes.map(async (resultFav) => {
     var imgCotainer = document.createElement("div");
     imgCotainer.className = "tooltip";
     var newFav = new Image();
-    newFav.src = dislikes.image.url;
+    var get_pic = await (
+      await fetch("https://api.thecatapi.com/v1/images/" + resultFav.image_id, {
+        headers: { "x-api-key": "27958382-a5cb-4854-86b7-fc4cf6850b66" },
+      })
+    ).json();
+    newFav.src = get_pic.url;
     imgCotainer.appendChild(newFav);
     container.appendChild(imgCotainer);
   });

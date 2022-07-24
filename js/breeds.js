@@ -2,6 +2,7 @@ var tabcontent = document.getElementsByClassName("tabcontent");
 var container = document.querySelector(".nav-display-result");
 var breedsContainer = document.querySelector(".breeds-display");
 var votingImg = document.querySelector(".voting-img");
+var searchResult = document.getElementsByClassName("search-result");
 
 (async () => {
   var breeds = await (
@@ -27,20 +28,44 @@ var votingImg = document.querySelector(".voting-img");
     imgId = randBreed.image.id;
     return imgId;
   }
+
   getRandomImg();
 
-  //voting for image
+  window.like = async () => {
+    votingImg.innerHTML = "";
+    getRandomImg();
+    // imgId = randBreed.image.id;
 
-  //press the button
-  //1 - go take the id - create a post reqest
-  // don't forget t pass the value and image - id
-  //if the action successfull clear the div and run a function
+    var likeRequest = await fetch("https://api.thecatapi.com/v1/votes", {
+      method: "POST",
+      headers: {
+        "x-api-key": "27958382-a5cb-4854-86b7-fc4cf6850b66",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ image_id: imgId, value: 1 }),
+    });
 
-  //list.filter(item => item.value === 1)
+    var likeResponse = await likeRequest.json();
+    console.log(likeResponse);
+  };
+  window.dislike = async () => {
+    votingImg.innerHTML = "";
+    getRandomImg();
+    // imgId = randBreed.image.id;
 
-  //
+    var dislikeRequest = await fetch("https://api.thecatapi.com/v1/votes", {
+      method: "POST",
+      headers: {
+        "x-api-key": "27958382-a5cb-4854-86b7-fc4cf6850b66",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ image_id: imgId, value: 0 }),
+    });
+
+    var dislikeResponse = await dislikeRequest.json();
+    console.log(dislikeResponse);
+  };
 })();
-
 // search for breeds by name
 async function search() {
   for (i = 0; i < tabcontent.length; i++) {
@@ -48,23 +73,40 @@ async function search() {
     container.innerHTML = "";
   }
   var input = document.getElementsByClassName("search-input");
-  var inputValue = input.value;
+  var inputValue = input[0].value;
   var params = new URLSearchParams();
   params.set("q", inputValue);
   var searchParams = await (
-    await fetch("https://api.thecatapi.com/v1/breeds/search" + params, {
+    await fetch("https://api.thecatapi.com/v1/breeds/search?" + params, {
       headers: {
         "x-api-key": "27958382-a5cb-4854-86b7-fc4cf6850b66",
       },
     })
   ).json();
-  console.log(searchParams);
-  //   searchParams.map((result) => {
-  //     var searchResult = document.getElementsByClassName("search-result");
-  //     var newImg = new Image();
-  //     newImg.src = result.url;
-  //     searchResult.appendChild(newImg);
-  //   });
+  searchParams.map(async (result) => {
+    var search_id = result.id;
+    var limitValue = 25;
+    var params = new URLSearchParams();
+    params.set("limit", limitValue);
+    params.set("breed_id", search_id);
+    var search_image = await (
+      await fetch("https://api.thecatapi.com/v1/images/search?" + params, {
+        headers: {
+          "x-api-key": "27958382-a5cb-4854-86b7-fc4cf6850b66",
+        },
+      })
+    ).json();
+
+    search_image.map((image) => {
+      var imgCotainer = document.createElement("div");
+      var newImg = new Image();
+      newImg.src = image.url;
+      imgCotainer.className = "tooltip";
+      imgCotainer.appendChild(newImg);
+      //   searchResult[0].appendChild(newImg);
+      container.appendChild(imgCotainer);
+    });
+  });
 }
 
 (async () => {
@@ -122,6 +164,53 @@ async function search() {
     tooltip.className = "tooltiptext";
     // tooltip.innerHTML = result.breeds[0].name;
     imgCotainer.appendChild(tooltip);
-    breedsContainer.appendChild(imgCotainer);
+    container.appendChild(imgCotainer);
   });
 })();
+
+async function updateBreeds() {
+  container.innerHTML = "";
+  var limit = document.getElementById("limitBreeds");
+  var limitBreeds = limit.value;
+  var breed = document.getElementById("allBreeds");
+  var allBreeds = breed.value;
+  var params = new URLSearchParams();
+  params.set("limit", limitBreeds);
+  if (allBreeds !== "0") {
+    params.set("breed_id", allBreeds);
+  }
+
+  var searchParams = await (
+    await fetch("https://api.thecatapi.com/v1/images/search?" + params, {
+      headers: {
+        "x-api-key": "27958382-a5cb-4854-86b7-fc4cf6850b66",
+      },
+    })
+  ).json();
+
+  searchParams.map((result) => {
+    var imgCotainer = document.createElement("div");
+    imgCotainer.className = "tooltip";
+    var newImg = new Image();
+    newImg.src = result.url;
+    newImg.onclick = async () => {
+      var imageId = result.id;
+      await (
+        await fetch("https://api.thecatapi.com/v1/favourites", {
+          method: "POST",
+          headers: {
+            "x-api-key": "27958382-a5cb-4854-86b7-fc4cf6850b66",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ image_id: imageId }),
+        })
+      ).json();
+    };
+    imgCotainer.appendChild(newImg);
+    var tooltip = document.createElement("span");
+    tooltip.className = "tooltiptext";
+    // tooltip.innerHTML = result.breeds[0].name;
+    imgCotainer.appendChild(tooltip);
+    container.appendChild(imgCotainer);
+  });
+}
